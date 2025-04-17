@@ -23,7 +23,6 @@
   background-color: #1a1a1a;
   color: white;
   padding: 10px 20px;
-  font-size: 14px;
 }
 
 .left-text {
@@ -110,7 +109,6 @@
   background: transparent;
   margin-left: 6px;
   font-size: 14px;
-  width: 146px;
 }
 
 .nav-icon {
@@ -309,53 +307,10 @@ letter-spacing: 0;
 line-height: 30px;
 font-family: "Big Text";
 max-width: 400px;
-margin-left: 53%;
+margin-left: 55%;
 padding-top: 50px;
 }
-      /* ===== OVERLAY МОДАЛ ==== */
-    #create-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: transparent;
-      z-index: 2000;
-      transform: translateX(100%);
-      transition: transform 0.5s ease-in-out;
-      /* Overlay өөрөө scroll хийхгүй болгох */
-      overflow: hidden;
-      /* Хэрэглэгчийн event-үүдийг тухайн overlay дээр бүрэн хянахгүй болгохын тулд */
-      pointer-events: none;
-    }
-    /* Идэвхжсэн үед pointer-events нь iframe болон exit button дээр зөв ажиллахын тулд auto болгоно */
-    #create-overlay.show {
-      transform: translateX(0%);
-    }
-    #create-overlay iframe,
-    #create-overlay #close-overlay {
-      pointer-events: auto;
-    }
-    #create-overlay iframe {
-      width: calc(100% - 40%);
-      margin: 10px 20%;
-      height: 100vh;
-      border: none;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      background-color: #f0f0f0;
-    }
-    /* Exit button тохиргоо */
-    #close-overlay {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      margin-right: 21%;
-      background: #fff;
-      border: none;
-      font-size: 20px;
-      cursor: pointer;
-      z-index: 2100;
-    }
+      
   </style>
 </head>
 <body>
@@ -371,7 +326,7 @@ padding-top: 50px;
       <a href="#">💬 Live Chat</a>
       <a href="#">❓ Help</a>
       <a href="#">👤 Log In</a>
-      <a href="#" id="join-us-link">Join Us</a>
+      <a href="#">Join Us</a>
       <img class="flag" src="/imgs/Flag_of_Mongolia.svg.png" alt="MGL Flag">
     </div>
   </header>   
@@ -398,8 +353,58 @@ padding-top: 50px;
 </section>
   <main class="mainbar1">
     <!--this is main bar-->
-  </main> 
+    <link rel="stylesheet" href="location.css" />
+    
+    <section class="locator">
+      <h2>Store Locator</h2>
+      <p>Find Dickies products in a retailer close to you</p>
   
+      <div class="map-search">
+        <input type="text" placeholder="Enter street address, city, state or zip code" />
+        <button>🔍</button>
+      </div>
+  
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12645897.755142722!2d-97.7430603!3d37.09024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1649479449246!5m2!1sen!2sus"
+          width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+  
+      <div class="location-grid">
+        <div class="location">
+          <h4>Dickies Fort Worth</h4>
+          <p>525 N. Watson Rd<br/>Fort Worth, TX 76053</p>
+          <p>📞 (817) 877-0027</p>
+          <p>Mon-Sat: 10am – 8:30pm<br/>Sun: 11am – 6pm</p>
+          <a href="#">Get Directions</a>
+        </div>
+  
+        <div class="location">
+          <h4>Dickies Grand Prairie</h4>
+          <p>2950 W Interstate 20, Suite 445<br/>Grand Prairie, TX 75052</p>
+          <p>📞 (972) 642-6124</p>
+          <p>Mon-Sat: 10am – 8pm<br/>Sun: 12pm – 6pm</p>
+          <a href="#">Get Directions</a>
+        </div>
+  
+        <!-- Та энд бусад байршлуудаа үргэлжлүүлэн нэмж болно -->
+  
+      </div>
+    </section>
+  
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Contact Us</a>
+        </div>
+        <p>&copy; 2025 Dickies. All rights reserved.</p>
+      </div>
+    </footer>
+
   <section class="help-section">
     <h2>Need Help?</h2>
     
@@ -508,24 +513,6 @@ padding-top: 50px;
       </div>
     </div>
   </footer>
-    <!-- Overlay элемент (зөвхөн нэг ширхэг) -->
-    <div id="create-overlay">
-      <button id="close-overlay">X</button>
-      <iframe src="create-acc.html"></iframe>
-    </div>
-    
-    <script>
-      // "Join Us" товч дарахад overlay-г гаргаж ирнэ
-      document.getElementById('join-us-link').addEventListener('click', function(e) {
-        e.preventDefault();
-        document.getElementById('create-overlay').classList.add('show');
-      });
-      
-      // "X" товч дарахад overlay-г хаана
-      document.getElementById('close-overlay').addEventListener('click', function(e) {
-        document.getElementById('create-overlay').classList.remove('show');
-      });
-    </script>
   
 </body>
 </html>

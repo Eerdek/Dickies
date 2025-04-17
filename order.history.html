@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <title>Хэрэглэгчийн Хуудас</title>
+  <link rel="stylesheet" href="order.history.css">
+  <title>Хэрэглэгчийн Хуудас</title>
   <style>
     body {
   margin: 0;
@@ -23,7 +25,6 @@
   background-color: #1a1a1a;
   color: white;
   padding: 10px 20px;
-  font-size: 14px;
 }
 
 .left-text {
@@ -110,7 +111,6 @@
   background: transparent;
   margin-left: 6px;
   font-size: 14px;
-  width: 146px;
 }
 
 .nav-icon {
@@ -312,50 +312,7 @@ max-width: 400px;
 margin-left: 53%;
 padding-top: 50px;
 }
-      /* ===== OVERLAY МОДАЛ ==== */
-    #create-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: transparent;
-      z-index: 2000;
-      transform: translateX(100%);
-      transition: transform 0.5s ease-in-out;
-      /* Overlay өөрөө scroll хийхгүй болгох */
-      overflow: hidden;
-      /* Хэрэглэгчийн event-үүдийг тухайн overlay дээр бүрэн хянахгүй болгохын тулд */
-      pointer-events: none;
-    }
-    /* Идэвхжсэн үед pointer-events нь iframe болон exit button дээр зөв ажиллахын тулд auto болгоно */
-    #create-overlay.show {
-      transform: translateX(0%);
-    }
-    #create-overlay iframe,
-    #create-overlay #close-overlay {
-      pointer-events: auto;
-    }
-    #create-overlay iframe {
-      width: calc(100% - 40%);
-      margin: 10px 20%;
-      height: 100vh;
-      border: none;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      background-color: #f0f0f0;
-    }
-    /* Exit button тохиргоо */
-    #close-overlay {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      margin-right: 21%;
-      background: #fff;
-      border: none;
-      font-size: 20px;
-      cursor: pointer;
-      z-index: 2100;
-    }
+      
   </style>
 </head>
 <body>
@@ -371,7 +328,7 @@ padding-top: 50px;
       <a href="#">💬 Live Chat</a>
       <a href="#">❓ Help</a>
       <a href="#">👤 Log In</a>
-      <a href="#" id="join-us-link">Join Us</a>
+      <a href="#">Join Us</a>
       <img class="flag" src="/imgs/Flag_of_Mongolia.svg.png" alt="MGL Flag">
     </div>
   </header>   
@@ -398,6 +355,30 @@ padding-top: 50px;
 </section>
   <main class="mainbar1">
     <!--this is main bar-->
+    <div class="container">
+        <div class="sidebar">
+          <p>Welcome, Jamiyanshiirev</p>
+          <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#" class="active">Order History</a></li>
+            <li><a href="#">Wishlist</a></li>
+            <li><a href="#">Account Details</a></li>
+            <li><a href="#">Change Password</a></li>
+            <li><a href="#">Address Book</a></li>
+            <li><a href="#">Payment Methods</a></li>
+            <li><a href="#">Preferences</a></li>
+            <li><a href="#" class="logout">Log Out</a></li>
+          </ul>
+        </div>
+        <div class="main-content">
+          <div class="breadcrumbs">Home / Dashboard / Order History</div>
+          <h1>Order History</h1>
+          <p>Don't see your order? <u><a href="#">Find it now</a></p></u>
+          <p>You currently have no order records for this account.</p>
+          <button class="start-shopping-btn">Start Shopping</button>
+        </div>
+      </div>
+
   </main> 
   
   <section class="help-section">
@@ -508,24 +489,6 @@ padding-top: 50px;
       </div>
     </div>
   </footer>
-    <!-- Overlay элемент (зөвхөн нэг ширхэг) -->
-    <div id="create-overlay">
-      <button id="close-overlay">X</button>
-      <iframe src="create-acc.html"></iframe>
-    </div>
-    
-    <script>
-      // "Join Us" товч дарахад overlay-г гаргаж ирнэ
-      document.getElementById('join-us-link').addEventListener('click', function(e) {
-        e.preventDefault();
-        document.getElementById('create-overlay').classList.add('show');
-      });
-      
-      // "X" товч дарахад overlay-г хаана
-      document.getElementById('close-overlay').addEventListener('click', function(e) {
-        document.getElementById('create-overlay').classList.remove('show');
-      });
-    </script>
   
 </body>
 </html>
