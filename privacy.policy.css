@@ -1,61 +1,189 @@
-.container {
-    display: flex;
-    max-width: 1400px;
-    margin: auto;
-    gap: 40px;
-  }
+.header {
+  display: flex;
+  align-items: center;
+  padding: 20px 40px 10px 40px;
+}
+.logo {
+  width: 45px;
+  margin-right: 20px;
+}
+.nav1 {
+  display: flex;
+  gap: 20px;
+  font-size: 10px
   
-  .sidebar {
-    flex: 1;
-    max-width: 250px;
-  }
+}
+.nav1 a {
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav1 a.sale {
+  color: #c00;
+}
+.search-cart {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.search-box {
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 14px;
+}
+.container1 {
+  display: flex;
+  max-width: 1200px;
+  margin: 30px auto 0 auto;
+  margin-bottom: 10%;
+}
+.sidebar1 {
+  padding-right: 70px;
+}
+.sidebar1 ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.active {
+  font-weight: bold;
+  color: #000;
+}
+.sidebar1 ul li {
+  margin-bottom: 10px;
+  margin-left: 10px;
+  padding-top: 12px;
+}
+.active1 {
+  font-weight: bold;
+  color: #000;
+}
+.sidebar1 ul li a,
+.sidebar1 ul li {
+  color: #444;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+.sidebar1 .logout {
+  margin-top: 18px;
+  font-size: 13px;
+  color: #888;
+  cursor: pointer;
+}
+.content {
+  flex: 1;
+  padding-left: 40px;
+  padding-right: 200px;
   
-  .sidebar h3 {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
+}
+.content h2 {
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+.content .desc {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 22px;
+}
+.add-payment {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #444;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+.add-payment .plus {
+  font-size: 18px;
+  font-weight: 700;
+}
+.footer a{
+  color: rgb(255, 255, 255);
+}
+/* Overlay */
+.chat-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  z-index: 1000;
+}
+
+/* Chat window */
+.chat-window {
+  position: fixed;
+  bottom: 80px; right: 20px;
+  width: 320px; height: 420px;
+  background: transparent; /* iframe доторх container‑ийг нууц болгож */
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  display: none;
+  z-index: 1001;
+}
+/* ===== OVERLAY МОДАЛ ==== */
+.overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: transparent;
+z-index: 2000;
+transform: translateX(100%);
+transition: transform 0.5s ease-in-out;
+overflow: hidden;
+pointer-events: none;
+}
+.overlay.show {
+transform: translateX(0%);
+pointer-events: auto;
+}
+.overlay iframe,
+.overlay .close-overlay {
+pointer-events: auto;
+}
+.overlay iframe {
+width: calc(100% - 40%);
+margin: 10px 20%;
+height: 100vh;
+border: none;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+background-color: #f0f0f0;
+}
+.close-overlay {
+position: absolute;
+top: 10px;
+right: 10px;
+margin-right: 21%;
+background: #fff;
+border: none;
+font-size: 20px;
+cursor: pointer;
+z-index: 2100;
+}
+
+@media (max-width: 900px) {
+  .container1 {
+    flex-direction: column;
+    padding: 0 10px;
   }
-  
-  .sidebar ul {
-    list-style: none;
+  .sidebar1 {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #eee;
+    padding-right: 0;
+    margin-bottom: 18px;
+  }
+  .main-content {
     padding-left: 0;
   }
-  
-  .sidebar ul li {
-    margin: 8px 0;
-  }
-  
-  .sidebar ul li a {
-    text-decoration: none;
-    color: #2e2e2e;
-    font-weight: bold;
-  }
-  
-  .content {
-    flex: 3;
-  }
-  
-  .content h1 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-  }
-  
-  .content h2 {
-    margin-top: 30px;
-    color: #333;
-    font-size: 1.4rem;
-  }
-  
-  .content p,
-  .content ul {
-    margin-top: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .content ul {
-    padding-left: 20px;
-  }
-  
-  .content a {
-    color: #2e2e2e;
-    text-decoration: underline;
-  }
+}

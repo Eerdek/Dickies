@@ -1,3 +1,197 @@
+    /* ===== OVERLAY МОДАЛ ==== */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      z-index: 2000;
+      transform: translateX(100%);
+      transition: transform 0.5s ease-in-out;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .overlay.show {
+      transform: translateX(0%);
+      pointer-events: auto;
+    }
+    .overlay iframe,
+    .overlay .close-overlay {
+      pointer-events: auto;
+    }
+    .overlay iframe {
+      width: calc(100% - 40%);
+      margin: 10px 20%;
+      height: 100vh;
+      border: none;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      background-color: #f0f0f0;
+    }
+    .close-overlay {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      margin-right: 21%;
+      background: #fff;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 2100;
+    }
+    .footer a{
+      color: rgb(255, 255, 255);
+  }
+    /* Overlay */
+    .chat-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width:100%; height:100%;
+      background: rgba(0,0,0,0.5);
+      display: none;
+      z-index: 1000;
+    }
+    
+    /* Chat window */
+    .chat-window {
+      position: fixed;
+      bottom: 80px; right: 20px;
+      width: 320px; height: 420px;
+      background: transparent; /* iframe доторх container‑ийг нууц болгож */
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      display: none;
+      z-index: 1001;
+    }
+
+/* ===== PRODUCT LIST STYLES ===== */
+.product-list {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  padding-bottom: 15px;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+.product-list::-webkit-scrollbar {
+  height: 4px;
+}
+
+.product-list::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 2px;
+}
+
+.product-item {
+  min-width: 200px;
+  text-align: center;
+}
+
+.product-item img {
+  width: 100%;
+  height: 180px;
+  background-color: #f5f5f5;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.product-item p {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* ===== DETAILED PRODUCT CARDS ===== */
+.product-list1 {
+  display: flex;
+  flex-wrap: wrap;       /* эсвэл nowrap+auto scroll, сонголтоос хамаараад */
+  gap: 20px;             /* хүссэн зайгаа тохируул */
+  overflow-x: auto;      /* эсвэл hidden/visible */
+  max-width: 100%;       /* контейнерийн хүрээндээ багтаахад тусална */
+  box-sizing: border-box;
+}
+.product-list,
+.product-list1 {
+  max-width: 100%;
+}
+
+.product-item,
+.product-card {
+  min-width: 200px;      /* эсвэл ширхэгээс хамаарч бага байлгах: 150px */
+  flex: 1 1 auto;        /* контейнерийн өргөнд уян хатан таарахад зориулав */
+}
+.container1 {
+  overflow-x: hidden;
+}
+
+
+
+.product-card {
+  min-width: 250px;
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+
+}
+/* CSS-ийн эхэндээ нэмэрлэ */
+ul.product-list,
+ul.product-list1 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.badge00 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #000;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.active {
+  font-weight: bold;
+  color: #000;
+}
+.product-image {
+  width: 100%;
+  height: 180px;
+  background-color: #f5f5f5;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+}
+
+.product-title {
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.product-price {
+  color: #333;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.product-rating {
+  color: gold;
+  font-size: 14px;
+}
+
+.rating-count {
+  color: #666;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+
 .browse-btn {
     font-family: Arial, sans-serif;
     font-size: 18px;
@@ -15,4 +209,72 @@
     color: white;
     transition: 0.3s ease;
   }
-  
+  .best-sellers{
+    flex: 1;
+    padding-left: 40px;
+    margin-top: -2%;
+  }
+  .header {
+    display: flex;
+    align-items: center;
+  }
+  .nav1 {
+    display: flex;
+    gap: 20px;
+    font-size: 15px
+    
+  }
+  .nav1 a {
+    color: #222;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .container1 {
+    display: flex;
+    max-width: 1200px;
+    margin: 30px auto 0 auto;
+    margin-bottom: 10%;
+  }
+  .sidebar1 {
+    padding-right: 70px;
+  }
+  .sidebar1 .welcome {
+    font-size: 15px;
+    margin-bottom: 18px;
+    color: #222;
+  }
+  .sidebar1 ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .sidebar1 ul li {
+    margin-bottom: 10px;
+  }
+  .sidebar1 ul li a,
+  .sidebar1 ul li {
+    color: #444;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+    cursor: pointer;
+  }
+  .sidebar1 .logout {
+    margin-top: 18px;
+    font-size: 13px;
+    color: #888;
+    cursor: pointer;
+  }
+  @media (max-width: 900px) {
+    .container1 {
+      flex-direction: column;
+      padding: 0 10px;
+    }
+    .sidebar1 {
+      width: 100%;
+      border-right: none;
+      border-bottom: 1px solid #eee;
+      padding-right: 0;
+      margin-bottom: 18px;
+    }
+  }

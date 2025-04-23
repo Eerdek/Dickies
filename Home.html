@@ -4,161 +4,10 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <title>Dickies Mongolia - Best Sellers</title>
+  <link rel="stylesheet" href="Home.css">
+  <link rel="stylesheet" href="category.css">
+  <link rel="stylesheet" href="search.css">
   <style>
-    /* ===== GLOBAL STYLES ===== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-
-    /* ===== HEADER STYLES ===== */
-    .test {
-      position: fixed;
-      width: 100%;
-      z-index: 1000;
-    }
-
-    .mainbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #1a1a1a;
-      color: white;
-      padding: 10px 20px;
-      font-size: 14px;
-    }
-
-    .left-text span {
-     font-weight: normal;
-     margin-left: 8px;
-    }
-    .left-text {
-     font-weight: bold;
-    }
-
-    .right-menu {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .right-menu a {
-      color: white;
-      text-decoration: none;
-    }
-
-    .right-menu a:hover {
-      text-decoration: underline;
-    }
-
-    .flag {
-      width: 24px;
-      height: auto;
-    }
-
-    .navbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 12px 20px;
-      border-bottom: 1px solid #ddd;
-      background-color: white;
-    }
-
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-    }
-
-    .nav-left img {
-      height: 40px;
-    }
-
-    .nav-left a {
-      color: #111;
-      font-weight: 500;
-      text-decoration: none;
-    }
-
-    .nav-left a.sale {
-      color: darkred;
-      font-weight: bold;
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .search-box {
-      display: flex;
-      align-items: center;
-      background-color: #f2f2f2;
-      padding: 8px 12px;
-      border-radius: 4px;
-    }
-
-    .search-box input {
-      border: none;
-      outline: none;
-      background: transparent;
-      margin-left: 6px;
-      font-size: 14px;
-      width: 150px;
-    }
-
-    .nav-icon {
-      font-size: 20px;
-      cursor: pointer;
-    }
-
-    /* ===== MAIN CONTENT STYLES ===== */
-    .mainbar1 {
-      background-color: white;
-      width: 100%;
-      padding-top: 130px;
-    }
-
-    .best-sellers {
-      max-width: 1800px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 15px;
-    }
-
-    h1 {
-      font-size: 24px;
-      margin: 0;
-      font-weight: bold;
-    }
-
-    .shop-all {
-      font-size: 14px;
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-    }
-
-    .shop-all:hover {
-      text-decoration: underline;
-    }
-
-    .divider {
-      height: 1px;
-      background-color: #ddd;
-      margin: 15px 0;
-    }
-
     /* ===== PRODUCT LIST STYLES ===== */
     .product-list {
       list-style: none;
@@ -237,6 +86,12 @@
       justify-content: center;
       color: #999;
     }
+    .product-image img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+      background-color: transparent;
+    }
 
     .product-title {
       font-weight: bold;
@@ -260,239 +115,6 @@
       font-size: 12px;
       margin-left: 5px;
     }
-
-    /* ===== HELP SECTION ===== */
-    .help-section {
-      padding: 40px 20px;
-      background-color: #f9f9f9;
-    }
-
-    .help-section h2 {
-      margin-left: 20px;
-      font-size: 32px;
-      margin-bottom: 30px;
-      font-weight: bold;
-    }
-
-    .support-info {
-      display: flex;
-      gap: 40px;
-      padding: 10px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .help-table {
-      width: 100%;
-      max-width: 1200px;
-      border-collapse: collapse;
-      font-size: 14px;
-      color: #222;
-      margin-top: 20px;
-    }
-
-    .help-table td {
-      padding: 10px;
-      vertical-align: top;
-    }
-
-    .help-table a {
-      color: #000;
-      text-decoration: underline;
-    }
-
-    .live-chat {
-      display: inline-block;
-      margin-top: 10px;
-      font-weight: bold;
-    }
-
-    .help-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 60px;
-      margin-top: 30px;
-    }
-
-    .help-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 130px;
-    }
-
-    .help-table img {
-      width: 100px;
-      height: 100px;
-      margin-bottom: 10px;
-    }
-
-    .help-item p {
-      font-weight: bold;
-      font-family: "Courier New", monospace;
-      font-size: 16px;
-    }
-
-    /* ===== FOOTER STYLES ===== */
-    .footer {
-      background-color: #000000;
-      color: #fff;
-      padding: 60px 40px;
-    }
-
-    .footer-top {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 40px;
-    }
-
-    .footer-logo {
-      width: 100px;
-      margin-bottom: 20px;
-    }
-
-    h3 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-    }
-
-    .subscribe {
-      display: flex;
-      background-color: #222;
-      border-radius: 4px;
-      overflow: hidden;
-      margin-bottom: 20px;
-    }
-
-    .subscribe input {
-      border: none;
-      padding: 10px;
-      background: none;
-      color: #fff;
-      flex: 1;
-      min-width: 280px;
-    }
-
-    .footer-medium {
-      padding-top: 180px;
-    }
-
-    .footer-medium1 {
-      padding-top: 70px;
-    }
-
-    .subscribe button {
-      padding: 10px 15px;
-      background-color: #444;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-
-    .social-icons i {
-      font-size: 18px;
-      margin-right: 10px;
-      cursor: pointer;
-    }
-
-    .footer-columns {
-      padding-top: 50px;
-      display: flex;
-      gap: 60px;
-      flex-wrap: wrap;
-    }
-
-    .footer-col h4 {
-      font-size: 0.9rem;
-      margin-bottom: 15px;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-
-    .footer-col ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .footer-col li {
-      margin-bottom: 10px;
-      font-size: 0.9rem;
-      cursor: pointer;
-    }
-
-    .footer-brand {
-      margin-bottom: 12%;
-    }
-
-    .footer-bottom {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 40px;
-      flex-wrap: wrap;
-      font-size: 0.8rem;
-      color: #aaa;
-    }
-
-    .footer-bottom a {
-      color: #aaa;
-      margin-left: 15px;
-      text-decoration: underline;
-    }
-
-    .b-footer_top-title {
-      font-size: 24px;
-      font-weight: 700;
-      letter-spacing: 0;
-      line-height: 30px;
-      font-family: "Big Text";
-      max-width: 400px;
-      margin-left: 53%;
-      padding-top: 50px;
-    }
-    /* ===== OVERLAY МОДАЛ ==== */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  z-index: 2000;
-  transform: translateX(100%);
-  transition: transform 0.5s ease-in-out;
-  overflow: hidden;
-  pointer-events: none;
-}
-.overlay.show {
-  transform: translateX(0%);
-  pointer-events: auto;
-}
-.overlay iframe,
-.overlay .close-overlay {
-  pointer-events: auto;
-}
-.overlay iframe {
-  width: calc(100% - 40%);
-  margin: 10px 20%;
-  height: 100vh;
-  border: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background-color: #f0f0f0;
-}
-.close-overlay {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  margin-right: 21%;
-  background: #fff;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  z-index: 2100;
-}
-
   </style>
 </head>
 <body>
@@ -503,10 +125,10 @@
         2 for $25 <span><strong>Women's T-Shirts</strong> <a href="#" style="color: white; text-decoration: underline;">Shop Now</a></span>
       </div>
       <div class="right-menu">
-        <a href="#">📍 Find a Store</a>
-        <a href="#">👥 Dickies for Business</a>
-        <a href="#">💬 Live Chat</a>
-        <a href="#">❓ Help</a>
+        <a href="location.html">📍 Find a Store</a>
+        <a href="dickiesForBusiness.html">👥 Dickies for Business</a>
+        <a href="#" id="chatToggle">💬 Live Chat</a>
+        <a href="help.html">❓ Help</a>
         <a href="#" id="log-in-link">👤 Log In</a>
         <a href="#" id="join-us-link">Join Us</a>
         <img class="flag" src="/imgs/Flag_of_Mongolia.svg.png" alt="MGL Flag">
@@ -516,49 +138,129 @@
     <nav class="navbar">
       <div class="nav-left">
         <a href="Home.html"><img src="/imgs/dickiesLogo-removebg-preview.png" alt="Dickies Logo"/></a>
-        <a href="#"><b>Men</b></a>
-        <a href="#"><b>Women</b></a>
-        <a href="#"><b>Kids</b></a>
-        <a href="#"><b>Scrubs</b></a>
-        <a href="#" class="sale"><b>Sale</b></a>
-        <a href="#"><b>Pants Finder</b></a>
+      <!-- Men hover-д зориулсан wrapper -->
+      <div class="dropdown-wrapper">
+        <a href="menclothes.html" id="men-link"><b>Men</b></a>
+        <!-- Энд iframe-ээр categoryMen.html-ийг ачаална -->
+        <div id="globalOverlay" class="category-overlay" role="dialog" aria-hidden="true">
+          <iframe id="catFrame" src="categoryMen.html" frameborder="0"></iframe>
+        </div>
+      </div> 
+      <!-- Women hover-д зориулсан wrapper -->
+      <div class="dropdown-wrapper">
+
+        <a href="womenclothes.html" id="Women-link"><b>Women</b></a>
+        <!-- Энд iframe-ээр categoryWomen.html-ийг ачаална -->
+        <div id="globalOverlay" class="category-overlay" role="dialog" aria-hidden="true">
+          <iframe id="catFrame" src="categoryWomen.html" frameborder="0"></iframe>
+         </div>
+      </div> 
+       <!-- Kids hover-д зориулсан wrapper -->
+       <div class="dropdown-wrapper">
+
+        <a href="kidsclothes.html" id="Women-link"><b>Kids</b></a>
+        <!-- Энд iframe-ээр categoryKids.html-ийг ачаална -->
+        <div id="globalOverlay" class="category-overlay" role="dialog" aria-hidden="true">
+          <iframe id="catFrame" src="categoryKids.html" frameborder="0"></iframe>
+         </div>
+      </div> 
+       <!-- Scrubs hover-д зориулсан wrapper -->
+       <div class="dropdown-wrapper">
+
+        <a href="scrubs.html" id="Women-link"><b>Scrubs</b></a>
+        <!-- Энд iframe-ээр categoryScrubs.html-ийг ачаална -->
+        <div id="globalOverlay" class="category-overlay" role="dialog" aria-hidden="true">
+          <iframe id="catFrame" src="categoryScrubs.html" frameborder="0"></iframe>
+         </div>
+      </div> 
+        <a href="sale.html" class="sale"><b>Sale</b></a>
+        <a href="workfinder.html"><b>Pants Finder</b></a>
       </div>
       <div class="nav-right">
-        <div class="search-box">
+        <div class="search-box" onclick="openSearch()">
           🔍 <input type="text" placeholder="Search">
         </div>
         <div class="nav-icon"><a href="wish-list.html">🔖</a></div>
-        <div class="nav-icon">🛒</div>
+        <div class="nav-icon"><a href="cart.html">🛒</a></div>
       </div>
     </nav>
   </section>
+  <!-- Search Overlay элемент -->
+<div id="searchOverlay" class="search-overlay hidden">
+  <!--this is main bar-->
+<div class="search-header">
+  <span>🔍</span>
+  <input type="text" class="search-input" placeholder="Search">
+  <button class="cancel-button" onclick="closeSearch()">Cancel</button>
+</div><hr></hr>
+
+<h3 class="section-title">TRENDING</h3>
+<div class="tags">
+  <style>
+    .tags a{
+      text-decoration: none;
+      color: #333;
+    }
+  </style>
+  <span class="tag"><a href="Home.html">874® Work Pants</a></span>
+  <span class="tag"><a href="menclothes.html">Men</a></span>
+  <span class="tag"><a href="womenclothes.html">Women</a></span>
+  <span class="tag"><a href="kidsclothes.html">Kids</a></span>
+  <span class="tag"><a href="scrubs.html">Scrubs</a></span>
+  <span class="tag"><a href="sale.html">Sale</a></span>
+  <span class="tag"><a href="workfinder.html">Pants Finder</a></span>
+</div>
+
+<h3 class="section-title">FEATURED PRODUCTS</h3>
+<div class="products">
+  <div class="product">
+    <img src="#" alt="ORIGINAL">
+    <p>ORIGINAL 874® WORK PANTS</p><span>$29.99 - $35.99</span>
+  </div>
+  <div class="product">
+    <img src="#" alt="LOOSE">
+    <p>LOOSE FIT DOUBLE KNEE WORK PANTS</p><span>$34.99 - $40.99</span>
+  </div>
+  <div class="product">
+    <img src="#" alt="FLEX">
+    <p>FLEX REGULAR FIT CARGO PANTS</p><span>$34.99-$37.99</span>
+  </div>
+</div>
+</div>
+<!-- ▲ Search Overlay төгсгөл -->
 
   <!-- Main Content -->
   <main class="mainbar1">
     <div class="best-sellers">
       <div class="header">
         <h1>Best Sellers</h1>
-        <a href="#" class="shop-all">Shop All →</a>
+        <a href="sale.html" class="shop-all">Shop All →</a>
       </div>
       
       <div class="divider"></div>
       
       <ul class="product-list">
+        <style>
+          .product-list a {
+            text-decoration: none;
+            color: #333;
+          }
+        </style>
         <li class="product-item">
-          <img src="https://via.placeholder.com/200x250?text=874+WORK+PANTS" alt="pants"/>
-          <p>874° WORK PANTS</p>
+          <img src="imgs/874° WORK PANTS.jpg" alt="pants"/>
+          <p><a href="iteminfo.html">874° WORK PANTS</a></p>
         </li>
         <li class="product-item">
-          <img src="https://via.placeholder.com/200x250?text=T-Shirts" alt="shirts"/>
-          <p>T-Shirts</p>
+          <img src="imgs/T-Shirts.png" alt="shirts"/>
+          <p><a href="iteminfo.html">T-Shirts</a></p>
         </li>
         <li class="product-item">
-          <img src="https://via.placeholder.com/200x250?text=Work+Jeans" alt="Jeans"/>
-          <p>Work Jeans</p>
+          <img src="imgs/Work_Jeans-removebg-preview.png" alt="Jeans"/>
+          <p><a href="iteminfo.html">Work Jeans</a></p>
         </li>
         <li class="product-item">
-          <img src="https://via.placeholder.com/200x250?text=Work+Shirts" alt="shirts"/>
-          <p>Work Shirts</p>
+          <img src="imgs/Work Shirts.jpg" alt="shirts"/>
+          <p><a href="iteminfo.html">Work Shirts</a></p>
         </li>
       </ul>
       
@@ -570,33 +272,39 @@
       
       <ul class="product-list1">
         <li class="product-card">
+          <style>
+            .product-card a {
+              text-decoration: none;
+              color: #333;
+            }
+          </style>
           <span class="badge">+13</span>
-          <div class="product-image">874® Work Pants Image</div>
-          <h3 class="product-title">Original 874® Work Pants</h3>
+          <div class="product-image"><img src="imgs/Original_874__Work_Pants-removebg-preview.png" alt="Work Pants Image"></div>
+          <h3 class="product-title"><a href="iteminfo.html">Original 874® Work Pants</a></h3>
           <p class="product-price">$29.99 - $35.99</p>
           <div class="product-rating">
             ★★★★★ <span class="rating-count">23211</span>
           </div>
         </li>
         <li class="product-card">
-          <div class="product-image">Woman's 874® Work Pants</div>
-          <h3 class="product-title">Woman's 874® Work Pants</h3>
+          <div class="product-image"><img src="imgs/Woman_s_874__Work_Pants-removebg-preview.png" alt="Woman's 874® Work Pants"></div>
+          <h3 class="product-title"><a href="iteminfo.html">Woman's 874® Work Pants</a></h3>
           <p class="product-price">$34.99 - $39.99</p>
           <div class="product-rating">
             ★★★★★ <span class="rating-count">2020</span>
           </div>
         </li>
         <li class="product-card">
-          <div class="product-image">874® Work Shorts</div>
-          <h3 class="product-title">874® Work Shorts</h3>
+          <div class="product-image"><img src="imgs/OIP-removebg-preview.png" alt="Work Shorts"></div>
+          <h3 class="product-title"><a href="iteminfo.html">874® Work Shorts</a></h3>
           <p class="product-price">$27.99 - $32.99</p>
           <div class="product-rating">
             ★★★★★ <span class="rating-count">2321</span>
           </div>
         </li>
         <li class="product-card">
-          <div class="product-image">Pro Swim Work Shorts</div>
-          <h3 class="product-title">Pro Swim Work Shorts</h3>
+          <div class="product-image"><img src="imgs/Pro_Swim_Work_Shorts-removebg-preview.png" alt="Swim Work Shorts"></div>
+          <h3 class="product-title"><a href="iteminfo.html">Pro Swim Work Shorts</a></h3>
           <p class="product-price">$24.99 - $29.99</p>
           <div class="product-rating">
             ★★★★☆ <span class="rating-count">1542</span>
@@ -632,7 +340,7 @@
       </table>
       <table class="help-table">
         <tr>
-          <td><img src="/imgs/mail.png" alt="Contact Icon"><p>Contact Us</p></td>
+          <td><img src="/imgs/mail.png" alt="Contact Icon"><p><a href="help.html">Contact Us</a></p></td>
           <td><img src="/imgs/order.png" alt="Track Order"><p>Track Order</p></td>
           <td><img src="/imgs/box.png" alt="Shipping"><p>Shipping & Returns</p></td>
           <td><img src="/imgs/AQ.png" alt="FAQs"><p>FAQs</p></td>
@@ -665,26 +373,26 @@
         <div class="footer-col">
           <h4>COMPANY INFO</h4>
           <ul>
-            <li>About Dickies</li>
+            <li><a href="about.html">About Dickies</a></li>
             <li>Media Inquiries</li>
             <li>Careers</li>
             <li>CA Supply Chains Act</li>
-            <p class="footer-medium">📍Find a Store</p>
+            <p class="footer-medium"><a href="location.html">📍Find a Store</a></p>
           </ul>
         </div>
   
         <div class="footer-col">
           <h4>CUSTOMER SERVICE</h4>
           <ul>
-            <li>💬 Live Chat</li>
+            <li><a href="#" id="chatToggle">💬 Live Chat</a></li>
             <li>FAQ</li>
-            <li>Contact Us</li>
+            <li><a href="help.html">Contact Us</a></li>
             <li>Check Order Status</li>
             <li>E-Gift Card</li>
             <li>Coupons & Promotions</li>
             <li>Returns</li>
             <li>Shipping & Delivery</li>
-            <p class="footer-medium1">👥Dickies for Business</p>
+            <p class="footer-medium1"><a href="dickiesForBusiness.html">👥Dickies for Business</a></p>
           </ul>
         </div>
   
@@ -706,13 +414,29 @@
       </div>
       <div class="footer-right">
         <a href="#">Accessibility Statement</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Use</a>
+        <a href="privacy.policy.html">Privacy Policy</a>
+        <a href="terms.of.use.html">Terms of Use</a>
         <a href="#">Your Privacy Choices</a>
         <a href="#">Notice at Collection</a>
       </div>
     </div>
   </footer>
+  <!-- Chat Overlay -->
+  <div id="chatOverlay" class="chat-overlay"></div>
+
+  <!-- Chat Window -->
+  <div class="chat-window" id="chatWindow">
+    <iframe id="chatFrame"
+            src="chatbot.html"              
+            frameborder="0"
+            style="width:100%; height:100%; border-radius:12px; overflow:hidden;">
+    </iframe>
+    <span id="chatClose"
+          style="position:absolute; top:10px; right:12px;
+                 font-size:20px; cursor:pointer; z-index:1001;">
+      ✕
+    </span>
+  </div> 
    <!-- Sign Up Overlay -->
 <div id="signup-overlay" class="overlay">
   <button class="close-overlay">X</button>
@@ -772,6 +496,58 @@
     });
   });
   </script>  
+   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle    = document.getElementById('chatToggle');
+      const overlay   = document.getElementById('chatOverlay');
+      const win       = document.getElementById('chatWindow');
+      const frame     = document.getElementById('chatFrame');
+      const closer    = document.getElementById('chatClose');
+    
+      function openChat() {
+        frame.src            = 'chatbot.html';
+        overlay.style.display= 'block';
+        win.style.display    = 'block';
+      }
+      function closeChat() {
+        overlay.style.display= 'none';
+        win.style.display    = 'none';
+        frame.src            = '';  // дараагийн нээхэд цэвэр ачаалдаг
+      }
+    
+      toggle.addEventListener('click', e => {
+        e.preventDefault();  // “#” рүү үсрэхгүй
+        openChat();
+      });
+      overlay.addEventListener('click', closeChat);
+      closer.addEventListener('click', closeChat);
+    });
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.dropdown-wrapper').forEach(wrapper => {
+          const overlay = wrapper.querySelector('.category-overlay');
+      
+          wrapper.addEventListener('mouseenter', () => {
+            overlay.classList.add('show');
+            overlay.setAttribute('aria-hidden', 'false');
+          });
+      
+          wrapper.addEventListener('mouseleave', () => {
+            overlay.classList.remove('show');
+            overlay.setAttribute('aria-hidden', 'true');
+          });
+        });
+      });
+      </script>    
+      <script>
+        function openSearch() {
+          document.getElementById('searchOverlay').classList.remove('hidden');
+        }
+        function closeSearch() {
+          document.getElementById('searchOverlay').classList.add('hidden');
+        }
+      </script>  
   
 </body>
 </html>

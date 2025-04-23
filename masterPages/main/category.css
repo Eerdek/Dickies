@@ -1,0 +1,32 @@
+.navbar {
+    position: relative; /* overlay-ийн харьцаа үүсгэх */
+    width: 100%; /* navbar-ийн доор overlay-ийг байрлуулах */
+  }
+  
+  .category-overlay {
+    position: fixed;
+    top: 80px;    /* navbar-ийн яг доогуур */
+    left: 0;      
+    right: 0;     /* left+right-оор өргөн автотоор тооцогдоно */
+    height: 450px;
+    background: white;
+    border: 0px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s, transform .2s;
+    transform: translateY(10px);
+    z-index: 1000;
+  }
+  /* iframe-ээ дотроо 100% болгоно */
+.category-overlay iframe {
+  width: 100%;
+  height: 100%;
+}
+  
+  .category-overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  

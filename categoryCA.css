@@ -1,0 +1,92 @@
+  /* Product Categories */
+  .product-categories {
+    background-color: white;
+    display: flex;
+    gap: 40px;
+    background-color: #fff;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .product-categories h4 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+  }
+  .product-categories li {
+    margin-bottom: 10px;
+  }
+  
+  .product-categories a {
+    font-size: 14px;
+    color: #555;
+    display: inline-block;
+    padding: 2px 0;
+    text-decoration: none;
+  }
+  
+  .product-categories a:hover {
+    color: #000;
+    text-decoration: underline;
+  }
+  .product-categories ul li{
+    list-style: none;
+  }
+  div{
+    margin: 0%;
+    padding: 0%;
+  }
+  .product-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+    align-items: flex-start; /* Дээд талд нь мөрөө янзлана */
+    background: #fff;
+    padding: 20px;
+  }
+  
+  /* Тус бүрийн багцад flex чадал, өргөн багадаа тохируулна */
+  .product-categories .category-group {
+    flex: 1 1 180px;    /* flex-grow:1, flex-shrink:1, flex-basis:180px */
+    max-width: 220px;   /* хамгийн их өргөн */
+  }
+  
+  /* UL-ийн default margin/padding дарна */
+  .product-categories .category-group ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Толгойн хэв маяг */
+  .product-categories .category-group h4 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: #000;
+  }
+  
+  /* Линкүүд */
+  .product-categories .category-group li {
+    margin-bottom: 8px;
+  }
+  
+  .product-categories .category-group a {
+    font-size: 14px;
+    color: #555;
+    text-decoration: none;
+  }
+  
+  .product-categories .category-group a:hover {
+    color: #000;
+    text-decoration: underline;
+  }
+  
+  /* “Sale” тусгай өнгө */
+  .product-categories .category-group a.sale {
+    color: red;
+  }
+  
